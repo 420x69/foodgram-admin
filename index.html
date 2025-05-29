@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Interface</title>
+    <link rel="stylesheet" href="/src/style.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <nav>
+                <div class="brand">API Interface</div>
+                <div class="nav-items">
+                    <button id="auth-btn">Auth: None</button>
+                    <select id="language-select">
+                        <option value="javascript">JavaScript</option>
+                        <option value="python">Python</option>
+                        <option value="curl">cURL</option>
+                    </select>
+                </div>
+            </nav>
+        </header>
+        
+        <main>
+            <div id="endpoints"></div>
+            <div id="auth-modal" class="modal">
+                <div class="modal-content">
+                    <h2>Authentication</h2>
+                    <div class="auth-options">
+                        <button data-auth="none">None</button>
+                        <button data-auth="token">Token</button>
+                        <button data-auth="basic">Basic</button>
+                        <button data-auth="session">Session</button>
+                    </div>
+                    <div id="auth-forms">
+                        <form id="token-form" class="auth-form hidden">
+                            <input type="text" id="token-scheme" placeholder="Scheme">
+                            <input type="text" id="token-key" placeholder="Token">
+                            <button type="submit">Submit</button>
+                        </form>
+                        <form id="basic-form" class="auth-form hidden">
+                            <input type="text" id="basic-username" placeholder="Username">
+                            <input type="password" id="basic-password" placeholder="Password">
+                            <button type="submit">Submit</button>
+                        </form>
+                    </div>
+                    <button class="close-modal">x</button>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+</body>
+</html>
